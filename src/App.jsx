@@ -3,9 +3,11 @@ import './App.css'
 
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editIndex, setEditIndex] = useState(-1);
+
+  
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -15,33 +17,33 @@ const App = () => {
     event.preventDefault();
     if (inputValue.trim() !== '') {
       if (editIndex !== -1) {
-        const updatedTodos = [...todos];
-        updatedTodos[editIndex] = inputValue;
-        setTodos(updatedTodos);
+        const updatedTodo = [...todo];
+        updatedTodo[editIndex] = inputValue;
+        setTodo(updatedTodo);
         setInputValue('');
         setEditIndex(-1);
       } else {
-        setTodos([...todos, inputValue]);
+        setTodo([...todo, inputValue]);
         setInputValue('');
       }
     }
   };
 
   const handleEdit = (index) => {
-    setInputValue(todos[index]);
+    setInputValue(todo[index]);
     setEditIndex(index);
   };
 
   const handleCheck = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index] = '✓ ' + updatedTodos[index];
-    setTodos(updatedTodos);
+    const updatedTodo = [...todo];
+    updatedTodo[index] = '+' + updatedTodo[index];
+    setTodo(updatedTodo);
   };
 
   const handleDelete = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos.splice(index, 1);
-    setTodos(updatedTodos);
+    const updatedTodo = [...todo];
+    updatedTodo.splice(index, 1);
+    setTodo(updatedTodo);
   };
 
   return (
@@ -58,13 +60,13 @@ const App = () => {
         <button type="submit" className="todo-add-button">{editIndex !== -1 ? 'Update' : 'Add'}</button>
       </form>
       <ul className="todo-list">
-        {todos.map((todo, index) => (
+        {todo.map((todo, index) => (
           <li key={index} className="todo-item">
             <span className="todo-text">{todo}</span>
             <div>
               <button onClick={() => handleCheck(index)} className="todo-check-button">✓</button>
               <button onClick={() => handleEdit(index)} className="todo-edit-button">✎</button>
-              <button onClick={() => handleDelete(index)} className="todo-delete-button">🗑</button>
+              <button onClick={() => handleDelete(index)} className="todo-delete-button">X</button>
             </div>
           </li>
         ))}
