@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 
 const App = () => {
-  const [todo, setTodo] = useState([]);
+  const stored = JSON.parse(localStorage.getItem('todo'))
+  console.log(stored,!!stored)
+  const [todo, setTodo] = useState(stored ? stored : []);
   const [inputValue, setInputValue] = useState('');
   const [editIndex, setEditIndex] = useState(-1);
 
-  
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todo));
+  }, [todo])
+
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -64,7 +69,7 @@ const App = () => {
           <li key={index} className="todo-item">
             <span className="todo-text">{todo}</span>
             <div>
-              <button onClick={() => handleCheck(index)} className="todo-check-button">✓</button>
+              <button onClick={() => handleCheck(index)} className="todo-check-button">✅</button>
               <button onClick={() => handleEdit(index)} className="todo-edit-button">✎</button>
               <button onClick={() => handleDelete(index)} className="todo-delete-button">X</button>
             </div>
