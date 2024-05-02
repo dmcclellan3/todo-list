@@ -43,6 +43,7 @@ body {
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .todo-add-button {
@@ -68,7 +69,7 @@ body {
   margin-bottom: 10px;
   box-shadow: 1px 1px 3px;
   align-items: center;
-
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .todo-check-button {
