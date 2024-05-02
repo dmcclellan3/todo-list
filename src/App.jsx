@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => {
   const stored = JSON.parse(localStorage.getItem('todo'))
-  console.log(stored,!!stored)
+  // console.log(stored,!!stored)
   const [todo, setTodo] = useState(stored ? stored : []);
   const [inputValue, setInputValue] = useState('');
   const [editIndex, setEditIndex] = useState(-1);
@@ -40,9 +40,11 @@ const App = () => {
   };
 
   const handleCheck = (index) => {
-    const updatedTodo = [...todo];
-    updatedTodo[index] = '+' + updatedTodo[index];
-    setTodo(updatedTodo);
+    const updatedTodo = [...todo]; //Spread grabs item and makes a copy 
+    updatedTodo.splice(index, 1)
+    setTodo(updatedTodo)
+    
+    
   };
 
   const handleDelete = (index) => {
@@ -52,7 +54,7 @@ const App = () => {
   };
 
   return (
-    <div className="todo-container">
+    <div className="d-flex todo-container">
       <h2 className="todo-title">TaskTrack</h2>
       <form onSubmit={handleSubmit} className="todo-form">
         <input
@@ -71,7 +73,7 @@ const App = () => {
             <div>
               <button onClick={() => handleCheck(index)} className="todo-check-button">✅</button>
               <button onClick={() => handleEdit(index)} className="todo-edit-button">✎</button>
-              <button onClick={() => handleDelete(index)} className="todo-delete-button">X</button>
+              <button onClick={() => handleDelete(index)} className="todo-delete-button">🗑️</button>
             </div>
           </li>
         ))}
