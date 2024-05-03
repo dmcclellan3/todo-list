@@ -23,6 +23,7 @@ body {
   background-color: #f8f9fa;
   border-radius: 20px;
   box-shadow: 0 2px 4px;
+  overflow: scroll;
 }
 
 .todo-title {
@@ -64,7 +65,7 @@ body {
 
 .todo-item {
   display: flex;
-  padding: 8px;
+  padding: 12px;
   background-color: #ffffff;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -81,6 +82,8 @@ body {
   border: none;
   cursor: pointer;
   background-color: #ffffff;
+  padding: 2px;
+  font-size: 21px;
 }
 
 .check-button:hover {
@@ -90,18 +93,24 @@ body {
 .delete-button {
   background-color: transparent;
   border: none;
-  padding: 6px;
-  margin-left: 6px;
+  padding: 2px;
+  /* size: 5px; */
+  /* margin-left: 6px; */
+  font-size: 20px;
   cursor: pointer;
-}
+} 
 
 .delete-button:hover {
   background-color: #e9ecef;
 }
+
+
 .edit-button {
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+  padding: 2px;
+  font-size: 20px;
 }
 
 .edit-button:hover {
@@ -109,28 +118,28 @@ body {
 }
 
 
-.check-button::before {
+/* .check-button::before {
   content: '\2714'; /* Unicode character */
-  color: #888; 
+  /* color: #888; 
   font-size: 1.2em; 
   background-color: transparent;
   border: none;
-}
-
+} */
+/* 
 .edit-button::before {
   content: '\270E'; 
   color: #888; 
   font-size: 1.2em; 
   background-color: #ffffff;
   border: none;
-}
+} */ 
 
-.delete-button::before {
+/* .delete-button::before {
   content: '\1F5D1'; 
   color: #888; 
   font-size: 1.2em; 
   background-color: transparent;
   border: none;
-}
+} */
 
 
