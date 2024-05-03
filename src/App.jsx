@@ -39,11 +39,10 @@ const App = () => {
     setEditIndex(index);
   };
 
-  const handleCheck = (index) => {
+  const handleCheck = (index) => { 
     const updatedTodo = [...todo]; //Spread grabs item and makes a copy 
     updatedTodo.splice(index, 1)
     setTodo(updatedTodo)
-    
     
   };
 
@@ -64,16 +63,16 @@ const App = () => {
           placeholder="Add a new item"
           className="todo-input"
         />
-        <button type="submit" className="todo-add-button">{editIndex !== -1 ? 'Update' : 'Add'}</button>
+        <button type="submit" className="add-button">{editIndex !== -1 ? 'Update' : 'Add'}</button>
       </form>
       <ul className="todo-list">
         {todo.map((todo, index) => (
           <li key={index} className="todo-item">
             <span className="todo-text">{todo}</span>
             <div>
-              <button onClick={() => handleCheck(index)} className="todo-check-button">✅</button>
-              <button onClick={() => handleEdit(index)} className="todo-edit-button">✎</button>
-              <button onClick={() => handleDelete(index)} className="todo-delete-button">🗑️</button>
+              <button onClick={() => handleCheck(index)} className="check-button" id='todo-icon'></button>
+              <button onClick={() => handleEdit(index)} className="edit-button" id='todo-icon'></button>
+              <button onClick={() => handleDelete(index)} className="delete-button" id='todo-icon'></button>
             </div>
           </li>
         ))}

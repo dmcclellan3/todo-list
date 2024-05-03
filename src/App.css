@@ -40,13 +40,14 @@ body {
 .todo-input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ced4da;
+  border: 1px solid #0c0c0c;
   border-radius: 4px;
   font-size: 16px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
-.todo-add-button {
+.add-button {
   padding: 10px 20px;
   margin-left: 10px;
   background-color: #000000;
@@ -70,32 +71,66 @@ body {
   box-shadow: 1px 1px 3px;
   align-items: center;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  
 }
 
-.todo-check-button {
-  /* background-color: transparent; */
-  /* border: 1px solid #ced4da; */
+.check-button {
+  
   border: none;
-  /* border-radius: 50%;  */
-  /* padding: 6px; */
-  /* margin-left: auto; */
   cursor: pointer;
-  /* transition: background-color 0.3s ease; */
+  background-color: #ffffff;
 }
 
-.todo-check-button:hover {
+.check-button:hover {
   background-color: #e9ecef;
 }
 
-.todo-delete-button {
+.delete-button {
   background-color: transparent;
   border: none;
   padding: 6px;
   margin-left: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.todo-delete-button:hover {
+.delete-button:hover {
   background-color: #e9ecef;
 }
+.edit-button {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #e9ecef;
+}
+
+
+.check-button::before {
+  content: '\2714'; /* Unicode character */
+  color: #888; 
+  font-size: 1.2em; 
+  background-color: transparent;
+  border: none;
+}
+
+.edit-button::before {
+  content: '\270E'; 
+  color: #888; 
+  font-size: 1.2em; 
+  background-color: #ffffff;
+  border: none;
+}
+
+.delete-button::before {
+  content: '\1F5D1'; 
+  color: #888; 
+  font-size: 1.2em; 
+  background-color: transparent;
+  border: none;
+}
+
+
