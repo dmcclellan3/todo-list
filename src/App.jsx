@@ -3,7 +3,6 @@ import './App.css'
 import { CiTrash } from "react-icons/ci";
 import { HiOutlinePencil } from "react-icons/hi";
 import { IoCheckmarkOutline } from "react-icons/io5";
-import { IoMdAddCircle } from "react-icons/io";
 
 
 const App = () => {
